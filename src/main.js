@@ -1,118 +1,116 @@
-console.log('hello')
-
 const data = [
     {
         "name": "김도경",
         "nickname": "kate",
-        "title": "untitled",
+        "title": "아스키 로맨스",
         "url": "https://burnanonana.github.io/myproject/"
     },
     {
         "name": "차정현",
         "nickname": "chacha",
-        "title": "untitled",
+        "title": "행운의 편지",
         "url": "https://cindy-0104.github.io/-/"
     },
     {
         "name": "임수호",
-        "nickname": 1004,
-        "title": "untitled",
+        "nickname": "1004",
+        "title": "Pentacles:",
         "url": "https://conandoil13-sketch.github.io/story2.0/index.html"
     },
     {
         "name": "강다은",
-        "nickname": "dani",
+        "nickname": "청운",
         "title": "untitled",
         "url": "https://da3un721-wq.github.io/Cheongun/14.html"
     },
     {
         "name": "이지우",
-        "nickname": "tomo",
+        "nickname": "Case File #04",
         "title": "untitled",
         "url": "https://dlwldn0305-spec.github.io/Case-File-04/"
     },
     {
         "name": "노은빈",
         "nickname": "ian",
-        "title": "untitled",
+        "title": "Leo",
         "url": "https://eunbin279-hash.github.io/leo"
     },
     {
         "name": "이은진",
         "nickname": "dust",
-        "title": "untitled",
+        "title": "달그락 다락방",
         "url": "https://eunjini0919-dust.github.io/fairytale_DUST"
     },
     {
         "name": "이수경",
         "nickname": "8ue",
-        "title": "untitled",
+        "title": "애증(愛憎)",
         "url": "https://happysuelee0902-sys.github.io/storybook/index.html"
     },
     {
         "name": "박희아",
         "nickname": "heea",
-        "title": "untitled",
+        "title": "🕺장래희망 :: 아이돌🕺",
         "url": "https://heea11.github.io/---/"
     },
     {
         "name": "김한별",
-        "nickname": "han",
+        "nickname": "전설의 노트 도난 사건",
         "title": "untitled",
         "url": "https://junniemine.github.io/The-Theft-of-the-Legendary-Notebook/"
     },
     {
         "name": "김아영",
         "nickname": "zero",
-        "title": "untitled",
+        "title": "Where is the boy?",
         "url": "https://oddugi02.github.io/whereistheboy/"
     },
     {
         "name": "김서진",
-        "nickname": "sin",
+        "nickname": "마지막 장례식",
         "title": "untitled",
         "url": "https://sin00000.github.io/The-last-funeral/index.html"
     },
     {
         "name": "진온유",
         "nickname": "nonew",
-        "title": "untitled",
+        "title": "what's your name?",
         "url": "https://smart55447-glitch.github.io/nonew/"
     },
     {
         "name": "최지수",
         "nickname": "jiso",
-        "title": "untitled",
+        "title": "숨겨진 페이지",
         "url": "https://suoo12.github.io/novel_develop"
     },
     {
         "name": "김시우",
         "nickname": "shu",
-        "title": "untitled",
+        "title": "Amnesia",
         "url": "https://us157202-web.github.io/amnesia/index.html"
     },
     {
         "name": "이연우",
         "nickname": "yeonwoo",
-        "title": "untitled",
+        "title": "2023년",
         "url": "https://yeonwoo062.github.io/2023story/"
     },
     {
         "name": "최예원",
         "nickname": "yewon",
-        "title": "untitled",
+        "title": "실험실 살인사건",
         "url": "https://yewon1189-web.github.io/mystery/start.html"
     },
     {
         "name": "배윤아",
         "nickname": "yoonin",
-        "title": "untitled",
+        "title": "연에게",
         "url": "https://yoonin8172.github.io/Dear_Yeon"
     },
     {
         "name": "김도윤",
         "nickname": "yoon",
-        "title": "untitled",
+        "title": "Aris: A",
         "url": "https://yoonyoon000.github.io/aris.a/"
     },
     {
@@ -126,26 +124,37 @@ const data = [
 const newData = []
 
 
+const container = document.querySelector('#container');
+
 while (data.length > 0) {
     const randNumber = Math.floor(Math.random() * data.length);
-    newData.push(data[randNumber])
-    data.pop(data[randNumber]);
-
-    console.log(data.length);
+    const item = data.splice(randNumber, 1)[0]; // 랜덤한 요소를 제거하면서 반환
+    newData.push(item);
 }
 
+console.log(newData);
 
 for (let i = 0; i < newData.length; i++) {
     const div = document.createElement('div');
-    div.innerHTML = newData[i].name;
+    div.className = 'items';
 
     const link = document.createElement('a');
     link.href = newData[i].url;
     link.innerHTML = newData[i].title;
 
-    div.append(link);
+    const authorDiv = document.createElement('div');
+    authorDiv.className = 'authorDiv';
 
-    document.body.append(div);
+    const line = document.createElement('div');
+    line.className = 'lines';
+
+    const nameDiv = document.createElement('div');
+    nameDiv.innerHTML = newData[i].name;
+
+    authorDiv.append(line, nameDiv);
+    div.append(link, authorDiv);
+
+    container.append(div);
 }
 
 
