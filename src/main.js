@@ -19,14 +19,14 @@ const data = [
     },
     {
         "name": "강다은",
-        "nickname": "청운",
-        "title": "untitled",
+        "nickname": "dani",
+        "title": "청운",
         "url": "https://da3un721-wq.github.io/Cheongun/14.html"
     },
     {
         "name": "이지우",
-        "nickname": "Case File #04",
-        "title": "untitled",
+        "nickname": "tomo",
+        "title": "Case File #04",
         "url": "https://dlwldn0305-spec.github.io/Case-File-04/"
     },
     {
@@ -55,8 +55,8 @@ const data = [
     },
     {
         "name": "김한별",
-        "nickname": "전설의 노트 도난 사건",
-        "title": "untitled",
+        "nickname": "han",
+        "title": "전설의 노트 도난 사건",
         "url": "https://junniemine.github.io/The-Theft-of-the-Legendary-Notebook/"
     },
     {
@@ -67,8 +67,8 @@ const data = [
     },
     {
         "name": "김서진",
-        "nickname": "마지막 장례식",
-        "title": "untitled",
+        "nickname": "sin",
+        "title": "마지막 장례식",
         "url": "https://sin00000.github.io/The-last-funeral/index.html"
     },
     {
@@ -116,7 +116,7 @@ const data = [
     {
         "name": "알따나",
         "nickname": "altana",
-        "title": "untitled",
+        "title": "zombie",
         "url": "https://altana06032005.github.io/zombie/"
     }
 ];
